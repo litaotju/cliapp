@@ -47,14 +47,18 @@ class CliApp(object):
         if os.name == 'nt': 
             self.addFunction('cls', lambda: os.system("cls"))
 
-    def _process(self, vm):
+    def _process(self, element):
         print("Unimplemented")
 
+    def _sequence(self):
+        u"unimplemented"
+        return []
+    
     def batch(self):
         if not self.path:
             print("No current path, firstly use cd?")
         else:
-            map(self._process, vm_files2(self.path))
+            map(self._process, self._sequence())
     
     def single(self):
         if not self.current_file:
